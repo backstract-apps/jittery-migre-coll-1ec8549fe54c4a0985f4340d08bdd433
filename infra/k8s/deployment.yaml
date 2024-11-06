@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433-depl
+  labels:
+    app: jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433
+  template:
+    metadata:
+      labels:
+        app: jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433
+    spec:
+      containers:
+        - name: jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:jittery-migre-coll-1ec8549fe54c4a0985f4340d08bdd433
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9020
